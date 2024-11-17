@@ -31,5 +31,13 @@ Feature: Tela inicial do e-commerce
   Scenario: Tela inicial sem produtos disponíveis
     Given que a base de dados está vazia
     When o usuário acessa a tela inicial
-    Then a mensagem "Nenhum filme disponível no momento" deve ser exibida
+    Then a mensagem "Parece que não há nada por aqui" deve ser exibida
+    And o botão “Recarregar a página" deve estar visível
     And os elementos dos cards não devem ser exibidos
+
+  Scenario: Recarregar a página no Empty State
+    Given que o botão "Recarregar a página" está visível no Empty State
+    When o usuário clica no botão "Recarregar a página"
+    Then a página deve ser recarregada
+    And os filmes disponíveis devem ser exibidos, se houver dados na base
+    And se a base continuar vazia, o Empty State deve permanecer visível

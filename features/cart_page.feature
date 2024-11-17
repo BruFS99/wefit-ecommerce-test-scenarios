@@ -25,5 +25,12 @@ Feature: Gerenciamento de itens no carrinho
   Scenario: Carrinho vazio
     Given que o carrinho está vazio
     When o usuário acessa a tela do carrinho
-    Then a mensagem "Seu carrinho está vazio" deve ser exibida
-    And o botão "Finalizar pedido" deve estar desabilitado
+    Then a mensagem "Parece que não há nada por aqui" deve ser exibida
+    And o botão “Recarregar a página" deve estar visível
+
+  Scenario: Recarregar a página no Empty State do carrinho
+    Given que o botão "Recarregar a página" está visível no Empty State
+    When o usuário clica no botão "Recarregar a página"
+    Then a página deve ser recarregada
+    And os itens adicionados ao carrinho devem ser exibidos, se houver dados atualizados
+    And se o carrinho continuar vazio, o Empty State deve permanecer visível
