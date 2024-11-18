@@ -34,3 +34,4 @@ Feature: Gerenciamento de itens no carrinho
     Then a página deve ser recarregada
     And os itens adicionados ao carrinho devem ser exibidos, se houver dados atualizados
     And se o carrinho continuar vazio, o Empty State deve permanecer visível
+

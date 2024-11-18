@@ -42,4 +42,5 @@ Feature: Tela inicial do e-commerce
     And os filmes disponíveis devem ser exibidos, se houver dados na base
     And se a base continuar vazia, o Empty State deve permanecer visível
 
+
     
